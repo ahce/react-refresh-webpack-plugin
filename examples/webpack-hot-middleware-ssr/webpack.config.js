@@ -7,7 +7,12 @@ const isDevelopment = process.env.NODE_ENV !== 'production';
 module.exports = {
   mode: isDevelopment ? 'development' : 'production',
   entry: {
-    main: ['webpack-hot-middleware/client', './src/index.jsx'],
+    main: [
+      'webpack-hot-middleware/client',
+      // Uncomment next line to apply the fix
+      // './src/react-refresh-fix.jsx',
+      './src/index.jsx',
+    ],
   },
   output: {
     filename: 'bundle.js',
